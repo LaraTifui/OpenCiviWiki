@@ -1,6 +1,10 @@
+import os
 from accounts.models import Profile
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+from django.core.files.uploadedfile import SimpleUploadedFile
+
+from project.core.settings import BASE_DIR
 
 
 class BaseTestCase(TestCase):
@@ -37,6 +41,19 @@ class ProfileModelTests(BaseTestCase):
         self.assertEqual(
             self.test_profile.profile_image_url, "/static/img/no_image_md.png"
         )
+        
+    def test_profile_has_image_url_with_image_set(self):
+        """Whether a profile has a set image"""
+        image_path = os.path.join(BASE_DIR, 'accounts', 'tests', 'test_profile_image.png')
+        with open(image_path, 'rb') as f:
+            image_file = SimpleUploadedFile(name='test_profile_image.png', content=f.read(), content_type='image/png')
+        self.test_profile.profile_image = image_file
+        self.test_profile.save()
+        actual_filename = os.path.basename(self.test_profile.profile_image.name)
+        expected_image_url = f'/media/profile_uploads/{actual_filename}'
+
+        self.assertEqual(self.test_profile.profile_image_url, expected_image_url)
+    
 
 
 class UserModelTest(TestCase):
