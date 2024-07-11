@@ -35,7 +35,7 @@ Initial run of the tool (in terminal):
   ### *Function 1*
 
 In project/accounts/tests/test_models.py I have added a test that checks if the profile has a set profile image.
-The test also checks if the image is set but also if it isn't set.
+The function profile_image_url,  had 50% branch test coverage, since a unit test already existed in the case a profile had no image associated with it, so the default image is used. After adding 1 unit tests , in order to check if the profile is correctly set when an image is associated with the profile,  the function has now 100% branch coverage and the total coverage of the models.py file has raised from  57% to 86%
 
 Code:
 ![image](https://github.com/LaraTifui/OpenCiviWiki/assets/121812597/533f5056-5908-4026-bc5c-57e470ed16f6)
@@ -62,14 +62,33 @@ New coverage:
 
 
 ### *Function 2*
+In project/accounts/tests/test_utils.py there is a function called get_account to which I created a test for.
+The function get_account, which has 3 optional parameters,  had 0% test coverage. After adding 5 unit tests , in order to check each of the possible calling situations covered by the function coding, the function has now 100% branch coverage and the total coverage of the utils.py file has raised from  32% to 65%.
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced tests for function 1>
 
-<Provide a screenshot of the old coverage results for such function>
+The commit link for the new test for function 1:
+https://github.com/LaraTifui/OpenCiviWiki/commit/3c1d9fb5b823a0cbf4a2b359affa05db09de8bf7
 
-<Provide a screenshot of the new coverage results for such function>
 
-<State the coverage improvement with a number and elaborate on why the coverage is improved>
+Old coverage result:
+
+![func2 init uncovered get_account](https://github.com/LaraTifui/OpenCiviWiki/assets/121812597/eb27c587-27b3-489d-93f1-dfecc0da07fb)
+
+
+New coverage result:
+
+![func2 final covered ](https://github.com/user-attachments/assets/66b9b766-ca86-40d4-bfc8-d36717a74d3c)
+
+
+Old coverage:
+
+![func2 init stat](https://github.com/LaraTifui/OpenCiviWiki/assets/121812597/da4934bc-ef24-4828-87e3-e39b247b5183)
+
+
+New coverage:
+
+![func2 final stat](https://github.com/user-attachments/assets/33a6aa22-0f14-4e5b-bf7e-e2a8b63c34de)
+
 
 
 ### Overall
@@ -80,5 +99,8 @@ Initial run of the tool (in html form):
 ![init index cov part2](https://github.com/LaraTifui/OpenCiviWiki/assets/121812597/ccd7f057-71aa-420b-97b3-b521589f0f7d)
 
 
+Final run of the tool (in html form):
 
-<Provide a screenshot of the new coverage results by running the existing tool using all test modifications>
+![fin index cov part1](https://github.com/user-attachments/assets/8f3e2ab1-fd3f-4ad6-a17e-48960597af4b)
+![fin index cov part2](https://github.com/user-attachments/assets/5ebea506-3cd6-4299-a216-5477e2ad2ac9)
+
