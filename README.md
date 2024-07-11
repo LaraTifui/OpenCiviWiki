@@ -12,9 +12,20 @@ Programming language: Python
 
 ## Coverage measurement with existing tool
 
-<Inform the name of the existing tool that was executed and how it was executed>
+Tool used:  Coverage.py
 
-<Show the coverage results provided by the existing tool with a screenshot>
+Execution:  
+
+            coverage run --branch -m pytest // for the test
+            
+            coverage report // to see the report
+            
+            coverage html // to see the report as well as the code covered, in html form
+            
+Initial run of the tool (in terminal):
+
+![init cov report part1](https://github.com/LaraTifui/OpenCiviWiki/assets/121812597/3b6590e9-f4ee-4ce2-a2a2-5224fd22d421)
+![init cov report part2](https://github.com/LaraTifui/OpenCiviWiki/assets/121812597/44856e3e-8fea-4ecb-8e0d-1b8ae7efbeb2)
 
 ## Coverage improvement
 
@@ -34,6 +45,11 @@ Programming language: Python
 
 ### Overall
 
-<Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed at the beginning of the report)>
+Initial run of the tool (in html form):
+
+![init index cov part1](https://github.com/LaraTifui/OpenCiviWiki/assets/121812597/96cf04fd-f255-44b7-81d7-4e1086d1eb2c)
+![init index cov part2](https://github.com/LaraTifui/OpenCiviWiki/assets/121812597/ccd7f057-71aa-420b-97b3-b521589f0f7d)
+
+
 
 <Provide a screenshot of the new coverage results by running the existing tool using all test modifications>
